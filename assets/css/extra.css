@@ -1,0 +1,61 @@
+/* SHADOWS */
+.alphabet-bar .letter::before {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+.title-area .album-art {
+    box-shadow: 0 4px 8px -1px rgba(0, 0, 0, .4);
+}
+
+/* BORDER TRICKS */
+.hero {
+    border-top: 4px solid var(--accent-color);
+}
+
+footer {
+    border-bottom: 4px solid var(--accent-color);
+}
+
+/* BORDER RADIUS */
+.alphabet-bar .letter::before {
+    border-radius: 4px;
+}
+
+header .searchbar {
+    border-radius: 6px;
+}
+
+.title-area .album-art {
+    border-radius: 8px;
+}
+
+.menu-bar .item::after {
+    background-color: var(--accent-color);
+}
+
+/* GRADIENTS */
+.hero::after {
+    background: linear-gradient(45deg, black, var(--accent-color) 110%);
+}
+
+/* CSS VARIABLES */
+body {
+    --accent-color: #ce194b;
+}
+
+/************** not covered in lecture *************/
+
+/* WEB FONTS */
+body {
+    font-family:
+        'Karla', /* WDD Brand font */
+        'San Francisco', /* macOS system font */
+        'Helvetica', /* OS X system font */
+        'Segoe UI', /* Windows sytem font */
+        sans-serif;
+}
+
+/* FILTER */
+.hero::before {
+    filter: blur(16px);
+}
