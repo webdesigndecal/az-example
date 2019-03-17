@@ -1,0 +1,221 @@
+/* RESET DEFAULT STYLES */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    /* These are bolded by default, but we don't want that */
+    font-weight: normal;
+}
+
+/* VARIABLES */
+
+body {
+    --accent-color: red;
+}
+
+/* MAIN STYLES */
+
+body {
+    font-family:
+        'Karla', /* WDD Brand font */
+        'San Francisco', /* macOS system font */
+        'Helvetica', /* OS X system font */
+        'Segoe UI', /* Windows sytem font */
+        sans-serif;
+    background: #eee;
+}
+
+.alphabet-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    padding: 6px 5%;
+    text-transform: uppercase;
+}
+
+.alphabet-bar a {
+    text-decoration: none;
+    color: #333;
+}
+
+.alphabet-bar .letter {
+    position: relative;
+    padding: 6px 8px 2px 8px;
+}
+
+.alphabet-bar .letter::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity .15s, transform .15s;
+}
+
+.alphabet-bar .letter:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero {
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+    margin-bottom: -156px;
+}
+
+.hero::before,
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.hero::before {
+    background: url('../img/red.png');
+    background-size: cover;
+    background-position: center center;
+    filter: blur(16px);
+    transform: scale(1.1); /* removes white fringes from blur */
+}
+
+.hero::after {
+    background: rgba(0, 0, 0, .5);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 8px 8%;
+}
+
+header .logo {
+    height: 100%;
+}
+
+header .logo img {
+    height: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+header .searchbar {
+    width: 100%;
+    margin-left: 24px;
+    margin-right: 16px;
+    flex-shrink: 1;
+    background: #fff;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 32px;
+    overflow: hidden;
+}
+
+header .searchbar input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0;
+}
+
+header .searchbar .search-label,
+header .searchbar .searchButton {
+    background: #aaa;
+    height: 100%;
+    line-height: 32px;
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 0 8px;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.title-area {
+    color: #fff;
+    width: 76%;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.title-area .album-art {
+    height: 230px;
+    width: 230px;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, .4);
+    margin-right: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.title-area .album-art img {
+    height: 100%;
+    width: 100%;
+}
+
+.title-area h1,
+.title-area p {
+    margin: 0;
+}
+
+.title-area h1 {
+    font-size: 3em;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.title-area .sub {
+    margin-top: 6px;
+    font-size: 1.5em;
+}
+
+.title-area .release {
+    font-size: 1.3em;
+    margin-top: 44px;
+    color: #333;
+}
+
+article {
+    width: 76%;
+    margin: 0 auto;
+}
