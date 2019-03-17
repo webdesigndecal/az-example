@@ -224,6 +224,7 @@ article {
     margin-right: 24px;
     border-radius: 8px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .title-area .album-art img {
@@ -326,4 +327,43 @@ footer .copyright {
 
 footer .tagline {
     font-style: italic;
+}
+
+@media only screen and (max-width: 840px) {
+    article {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .alphabet-bar {
+        display: none;
+    }
+    .search-label {
+        display: none;
+    }
+    .title-area .album-art {
+        height: 180px;
+        width: 180px;
+        margin-top: 30px;
+    }
+    footer .tagline {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .title-area {
+        flex-direction: column;
+    }
+    .title-area h1,
+    .title-area p {
+        color: #333;
+    }
+    .title-area .release {
+        margin-top: 16px;
+    }
+    header nav {
+        display: none;
+    }
 }
