@@ -167,6 +167,7 @@ header .searchbar .searchButton {
 
 header .searchbar .searchButton {
     cursor: pointer;
+    margin: 0;
 }
 
 header .searchbar .searchButton:hover {
