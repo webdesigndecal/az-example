@@ -16,7 +16,7 @@ h3 {
 /* VARIABLES */
 
 body {
-    --accent-color: red;
+    --accent-color: #ce194b;
 }
 
 /* MAIN STYLES */
@@ -28,7 +28,7 @@ body {
         'Helvetica', /* OS X system font */
         'Segoe UI', /* Windows sytem font */
         sans-serif;
-    background: #eee;
+    background: #f8f8f8;
 }
 
 .alphabet-bar {
@@ -60,11 +60,15 @@ body {
     top: 0;
     left: 0;
     background: #fff;
-    border-radius: 3px;
+    border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
     opacity: 0;
     transform: scale(0.6);
     transition: opacity .15s, transform .15s;
+}
+
+.alphabet-bar .letter:hover {
+    color: var(--accent-color);
 }
 
 .alphabet-bar .letter:hover::before {
@@ -77,6 +81,7 @@ body {
     position: relative;
     height: 300px;
     margin-bottom: -156px;
+    border-top: 4px solid var(--accent-color);
 }
 
 .hero::before,
@@ -100,7 +105,8 @@ body {
 }
 
 .hero::after {
-    background: rgba(0, 0, 0, .5);
+    background: linear-gradient(45deg, black, var(--accent-color) 110%);
+    opacity: .6;
 }
 
 header {
@@ -128,7 +134,7 @@ header .searchbar {
     margin-right: 16px;
     flex-shrink: 1;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 6px;
 
     display: flex;
     flex-direction: row;
@@ -142,16 +148,35 @@ header .searchbar input {
     height: 100%;
     box-sizing: border-box;
     border: 0;
+    font-size: 1em;
+    padding: 6px 8px;
+    background: #e9e9e9;
+}
+
+header .searchbar input:focus {
+    outline: 0;
+    background: #fff;
 }
 
 header .searchbar .search-label,
 header .searchbar .searchButton {
-    background: #aaa;
+    background: var(--accent-color);
+    color: #fff;
     height: 100%;
     line-height: 32px;
     box-sizing: border-box;
     font-size: 1em;
     padding: 0 8px;
+    border: 0;
+    text-transform: uppercase;
+}
+
+header .searchbar .searchButton {
+    cursor: pointer;
+}
+
+header .searchbar .searchButton:hover {
+    opacity: .8;
 }
 
 header nav {
@@ -168,23 +193,36 @@ header nav a {
     margin-left: 16px;
 }
 
+header nav a:hover {
+    text-decoration: underline;
+}
+
+article {
+    width: 76%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
 .title-area {
     color: #fff;
-    width: 76%;
-    margin: 0 auto;
+    width: 100%;
 
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+
+    position: relative;
+    z-index: 10;
+    margin-bottom: 12px;
 }
 
 .title-area .album-art {
     height: 230px;
     width: 230px;
-    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, .4);
+    box-shadow: 0 4px 8px -1px rgba(0, 0, 0, .4);
     margin-right: 24px;
-    border-radius: 4px;
+    border-radius: 8px;
     overflow: hidden;
 }
 
@@ -215,7 +253,77 @@ header nav a {
     color: #333;
 }
 
-article {
-    width: 76%;
-    margin: 0 auto;
+.menu-bar {
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 28px;
+}
+
+.menu-bar .item {
+    list-style: none;
+    display: block;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    margin-right: 12px;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+}
+
+.menu-bar .item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform .3s ease-out;
+}
+
+.menu-bar .item.active,
+.menu-bar .item:hover {
+    color: var(--accent-color);
+}
+
+.menu-bar .item.active::after,
+.menu-bar .item:hover::after {
+    transform: scaleX(1);
+}
+
+.lyrics {
+    line-height: 1.4em;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 5%;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+footer .name {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
+footer .tagline,
+footer .copyright {
+    color: #777;
+}
+
+footer .tagline {
+    font-style: italic;
 }
