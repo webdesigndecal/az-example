@@ -23,7 +23,7 @@ body {
 
 body {
     font-family:
-        'San Francisco', /* macOS system font */
+        system-ui,
         'Helvetica', /* OS X system font */
         'Segoe UI', /* Windows sytem font */
         sans-serif;

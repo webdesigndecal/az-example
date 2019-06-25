@@ -49,7 +49,7 @@ body {
 body {
     font-family:
         'Karla', /* WDD Brand font */
-        'San Francisco', /* macOS system font */
+        system-ui,
         'Helvetica', /* OS X system font */
         'Segoe UI', /* Windows sytem font */
         sans-serif;
